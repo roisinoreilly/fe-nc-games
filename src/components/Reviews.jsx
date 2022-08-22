@@ -19,17 +19,13 @@ export const Reviews = () => {
             allReviews.map((review) => {
             return (
                 <>
-                <div className="review">
-                <ul key={review.title}>
-                    <li key={review.title}>
-                        <li>{review.title}</li>
-                        <li>{review.owner}</li>
-                        <img src={review.review_img_url} width="200vh" alt={review.title}></img>
-                        <li>{review.review_body}</li>
-                        <li>Votes: {review.votes}</li>
-                        <li>Comments: {review.comment_count}</li>
-                    </li>
-                </ul>
+                <div className="review-card">
+                <h2 key={review.id}>{review.title}</h2>
+                        <p key={review.owner}>Author: {review.owner}</p>
+                        <img src={review.review_img_url} key={review.id} width="200vh" alt={review.title}></img>
+                        <p key={review.id}>{review.review_body}</p>
+                        <p key={review.id}>Votes: {review.votes}</p>
+                        <p key={review.id}>Comments: {review.comment_count}</p>
                 </div>
                 </>
             )

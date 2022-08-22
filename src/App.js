@@ -11,13 +11,11 @@ function App() {
     <div className="App">
         <h1>NC Games</h1>
         <Nav></Nav>
-      <nav>
         <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/categories" element={<Categories />} />
         <Route path="/reviews" element={<Reviews />} />
         </Routes>
-      </nav>
     </div>
           </BrowserRouter>
   );
