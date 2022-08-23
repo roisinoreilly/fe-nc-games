@@ -1,10 +1,10 @@
 import './App.css';
-import { BrowserRouter, Routes, Route, useParams } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from "./components/Home"
 import Categories from "./components/Categories"
 import Nav from './components/Nav';
 import { Reviews } from './components/Reviews';
-import { SingleCategory } from './components/SingleCategory';
+import { SingleReview } from './components/SingleReview';
 
 
 function App() {
@@ -18,6 +18,7 @@ function App() {
         <Route path="/categories" element={<Categories />} />
         <Route path="/reviews" element={<Reviews />} />
         <Route path="/reviews/:category_slug" element={<Reviews />} />
+        <Route path="/review/:review_id" element={<SingleReview />} />
         </Routes>
     </div>
           </BrowserRouter>

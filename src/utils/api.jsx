@@ -19,3 +19,10 @@ export const getAllCategories = () => {
         return res.data.categories
     })
 }
+
+export const getReviewByID = (review_id) => {
+    if (review_id !== undefined) {
+    return api.get(`/api/reviews/${review_id}`).then((res) => {
+        return res.data.review
+    })
+}}
