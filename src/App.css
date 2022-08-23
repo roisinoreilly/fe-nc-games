@@ -36,3 +36,15 @@
     transform: rotate(360deg);
   }
 }
+
+.nav-bar {
+  margin: 5%
+}
+
+.nav-link {
+  margin: 5%
+}
+
+.category-link {
+  padding: 2%;
+}

@@ -9,6 +9,8 @@ useEffect(() => {
   setCategory(category_slug)
 })
   return (
+    <div className='category-link'>
     <Link to={`/reviews/${category}`}>{category}</Link>
+    </div>
   );
 };
