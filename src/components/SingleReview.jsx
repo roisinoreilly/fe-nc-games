@@ -21,6 +21,7 @@ export const SingleReview = () => {
     return <p>Loading...</p>;
   } else {
     const formatDate = moment(review.created_at).format('LLLL')
+    console.log(formatDate)
     return (
       <>
         <div className="single-review">
