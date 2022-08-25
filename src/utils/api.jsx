@@ -26,3 +26,10 @@ export const getReviewByID = (review_id) => {
         return res.data.review
     })
 }}
+
+export const increaseVotes = (review_id, votes) => {
+    return api.patch(`api/reviews/${review_id}`, {inc_votes: votes})
+    .then((res) => {
+        return res.data.review.votes
+    })
+}

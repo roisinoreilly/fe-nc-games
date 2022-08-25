@@ -19,29 +19,37 @@ export const Reviews = () => {
   } else {
     return allReviews.map((review) => {
       return (
-        // <SingleReview review={review}></SingleReview>
-        <>        
-        <Link to={`/review/${review.review_id}`}>{review.title}</Link>
-        <br></br>
-        <img src={review.review_img_url} key={review.id} width="200vh" alt={review.title}></img>
-        <p>Category: {review.category}</p>
-        <p key={review.owner}>Author: {review.owner}</p>
+        <>
+        <div className="card" style={{width: "18rem"}}>
+        <img
+            src={review.review_img_url}
+            key={review.id}
+            className="card-img-top"
+            alt={review.title}
+            style={{width: "18rem", height: "10rem", "objectFit": "cover"}}
+          ></img>
+          <div className="card-body">
+            <h5 className="card-title">{review.title}</h5>
+            <p className="card-text">{review.owner}</p>
+            <p className="snippet">{review.review_body}</p>
+            <Link to={`/review/${review.review_id}`}>Read more</Link>
+          </div>
+        </div>
+
+
+
+
+          {/* <Link to={`/review/${review.review_id}`}>{review.title}</Link>
+          <br></br>
+          <img
+            src={review.review_img_url}
+            key={review.id}
+            width="200vh"
+            alt={review.title}
+          ></img>
+          <p>Category: {review.category}</p>
+          <p key={review.owner}>Author: {review.owner}</p> */}
         </>
-
-
-
-
-        // <>
-        // <div className="review-card">
-        // <h2 key={review.id}>{review.title}</h2>
-        // <p>Category: {review.category}</p>
-        //         <p key={review.owner}>Author: {review.owner}</p>
-        //         <img src={review.review_img_url} key={review.id} width="200vh" alt={review.title}></img>
-        //         <p key={review.id}>{review.review_body}</p>
-        //         <p key={review.id}>Votes: {review.votes}</p>
-        //         <p key={review.id}>Comments: {review.comment_count}</p>
-        // </div>
-        // </>
       );
     });
   }

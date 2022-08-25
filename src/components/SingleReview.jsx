@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { getReviewByID } from "../utils/api";
 import moment from "moment";
+import { Votes } from "./Votes";
 
 export const SingleReview = () => {
   const [review, setReview] = useState([]);
@@ -20,6 +21,7 @@ export const SingleReview = () => {
     return <p>Loading...</p>;
   } else {
     const formatDate = moment(review.created_at).format('LLLL')
+    console.log(formatDate)
     return (
       <>
         <div className="single-review">
@@ -28,7 +30,8 @@ export const SingleReview = () => {
                 <br></br>Created at: {formatDate}</p>
                 <img src={review.review_img_url} key={review.id} width="200vh" alt={review.title}></img>
                 <p key={review.id}>{review.review_body}
-                <br></br><br></br>Votes: {review.votes}  / Comments: {review.comment_count}</p>
+                <br></br><br></br>Comments: {review.comment_count}</p>
+                <Votes review={review}/>
         </div>
       </>
     );
