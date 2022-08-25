@@ -37,6 +37,7 @@
   }
 }
 
+
 .nav-bar {
   margin: 5%
 }
@@ -47,4 +48,28 @@
 
 .category-link {
   padding: 2%;
+}
+
+
+.snippet {
+  display: -webkit-box;
+  max-width: 200px;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.card {
+  display:inline-block;
+  margin: 10px;
+}
+
+.comment-card {
+  margin: 0;
+  border-style: solid;
+  border-radius: 4px;
+}
+
+.navbar-text {
+  color: #282c34;
 }

@@ -70,10 +70,10 @@ export const Votes = ({ review }) => {
     return (
       <div>
         <button id="upvote-button" onClick={upvote}>
-          upvote
+          Upvote
         </button>
         <button id="downvote-button" onClick={downvote}>
-          downvote
+          Downvote
         </button>
         <p>Votes: {upvotes}</p>
       </div>

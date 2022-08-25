@@ -33,3 +33,10 @@ export const increaseVotes = (review_id, votes) => {
         return res.data.review.votes
     })
 }
+
+export const getComments = (review_id) => {
+    return api.get(`api/reviews/${review_id}/comments`)
+    .then((res) => {
+        return res.data.comments
+    })
+}
