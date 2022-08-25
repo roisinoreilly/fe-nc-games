@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { getReviewByID } from "../utils/api";
 import moment from "moment";
 import { Votes } from "./Votes";
+import { Comments } from "./Comments";
 
 export const SingleReview = () => {
   const [review, setReview] = useState([]);
@@ -21,7 +22,6 @@ export const SingleReview = () => {
     return <p>Loading...</p>;
   } else {
     const formatDate = moment(review.created_at).format('LLLL')
-    console.log(formatDate)
     return (
       <>
         <div className="single-review">
@@ -32,6 +32,7 @@ export const SingleReview = () => {
                 <p key={review.id}>{review.review_body}
                 <br></br><br></br>Comments: {review.comment_count}</p>
                 <Votes review={review}/>
+                <Comments review={review}/>
         </div>
       </>
     );
