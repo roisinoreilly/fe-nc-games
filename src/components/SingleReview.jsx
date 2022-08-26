@@ -44,7 +44,7 @@ export const SingleReview = () => {
           </p>
           <Votes review={review} />
           <CommentsButton review={review} />
-          <PostComment review_id={review.review_id}/>
+          <PostComment review={review}/>
         </div>
       </>
     );

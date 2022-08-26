@@ -2,7 +2,7 @@ import { useState } from "react";
 import { postComment } from "../utils/api";
 import moment from "moment";
 
-export const PostComment = ({ review_id }) => {
+export const PostComment = ({ review }) => {
   const [body, setBody] = useState("");
   const [message, setMessage] = useState("");
   const [postedComment, setPostedComment] = useState({});
@@ -21,18 +21,9 @@ export const PostComment = ({ review_id }) => {
       setMessage("");
       setMessage(<p className="posted-message">Comment posted!</p>);
       setIsDisabled(true);
-      postComment(review_id, username, body)
+      postComment(review.review_id, username, body)
         .then((comment) => {
-          return (
-            <>
-              <div className="comment-card">
-                <p>Username: {comment.author}</p>
-                <p>{comment.body}</p>
-                <p>Votes: {comment.votes}</p>
-                <p>{moment(comment.created_at).format("LLL")}</p>
-              </div>
-            </>
-          );
+            setPostedComment(comment)
         })
         .catch((err) => {
           setPostedComment({});
@@ -44,7 +35,7 @@ export const PostComment = ({ review_id }) => {
 
   const submitBox = (
     <>
-      <p className="add-comment-label">Add a comment</p>
+      <p className="add-comment-label">Add a comment:</p>
       <form className="add-comment" onSubmit={handleSubmit}>
         <label>
           <textarea
@@ -76,7 +67,7 @@ export const PostComment = ({ review_id }) => {
   else
     return (
       <>
-        {Object.keys(postedComment).length !== 0 && err === null ? (
+        {(Object.keys(postedComment).length !== 0 && err === null) ? (
           <div className="comment-card">
             <p>Username: {postedComment.author}</p>
             <p>{postedComment.body}</p>

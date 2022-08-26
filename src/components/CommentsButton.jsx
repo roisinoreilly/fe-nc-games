@@ -2,7 +2,7 @@ import { useState } from "react";
 import { AllComments } from "./AllComments";
 
 export const CommentsButton = ({ review }) => {
-  const [isHidden, setIsHidden] = useState(true);
+  const [isHidden, setIsHidden] = useState(false);
 
   const handleClick = () => {
     setIsHidden(!isHidden);
@@ -14,7 +14,7 @@ export const CommentsButton = ({ review }) => {
           Comments
         </button>
       </div>
-      {isHidden ? <AllComments review_id={review.review_id} /> : null}
+      {isHidden ? <AllComments review={review} /> : null}
     </>
   );
 };

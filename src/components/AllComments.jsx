@@ -2,16 +2,16 @@ import moment from "moment";
 import { useState, useEffect } from "react";
 import { getComments } from "../utils/api";
 
-export const AllComments = ({ review_id }) => {
+export const AllComments = ({ review }) => {
   const [allComments, setAllComments] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    getComments(review_id).then((comments) => {
+    getComments(review.review_id).then((comments) => {
       setAllComments(comments);
       setIsLoading(false);
     });
-  }, [review_id]);
+  }, [review.review_id]);
   if (isLoading) {
     return <p>Loading...</p>;
   } else {

@@ -67,9 +67,13 @@
 }
 
 .comment-card {
-  margin: 0;
+  margin-right: 40px;
+  margin-left: 40px;
+  margin-top: 10px;
+  margin-bottom: 20px;
   border-style: solid;
   border-radius: 4px;
+
 }
 
 .navbar-text {
@@ -79,6 +83,7 @@
 .comment-box {
   width: 90vw;
   margin-top: 5px;
+  
 }
 
 .add-comment-label {
