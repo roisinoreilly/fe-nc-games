@@ -23,7 +23,6 @@ export const Reviews = () => {
     getAllReviews(category_slug, sortBy, orderBy).then((allReviews) => {
       setAllReviews(allReviews);
       setIsLoading(false);
-      <AllReviews allReviews={allReviews}/>
     });
   }
 
