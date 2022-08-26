@@ -4,10 +4,25 @@ const api = axios.create({
     baseURL: "https://roisin-oreilly-nc-games.herokuapp.com/"
 })
 
-export const getAllReviews = (category_slug) => {
+export const getAllReviews = (category_slug, sortBy, orderBy) => {
     let queryString = ""
+    if (category_slug !== undefined || orderBy !== undefined || sortBy !== undefined) {
+        queryString += "?"
+    }
     if (category_slug !== undefined) {
-        queryString += `?category=${category_slug}`
+        queryString += `category=${category_slug}`
+    }
+    if (category_slug !== undefined && sortBy !== undefined) {
+        queryString += "&"
+    }
+    if (sortBy !== undefined) {
+        queryString += `sort_by=${sortBy}`
+    }
+    if (orderBy !== undefined && category_slug === undefined && sortBy === undefined) {
+        queryString += `order_by=${orderBy}`
+    }
+    if (orderBy !== undefined && (category_slug !== undefined || sortBy !== undefined)) {
+        queryString += `&order_by=${orderBy}`
     }
     return api.get(`/api/reviews/${queryString}`).then((res) => {
         return res.data.reviews

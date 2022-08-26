@@ -98,3 +98,16 @@
 .posted-message {
   margin-top: 20px;
 }
+
+.created-at {
+  margin: 0
+}
+
+.votes-comments-text {
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+.author-text {
+  margin: 0
+}
