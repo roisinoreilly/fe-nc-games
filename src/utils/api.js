@@ -61,7 +61,11 @@ export const postComment = (review_id, username, body) => {
     .then((res) => {
         return res.data.comment
     })
-    // .catch((error) => {
-    //     console.log(error)
-    // })
+}
+
+export const deleteComment = (comment_id) => {
+    return api.delete(`api/comments/${comment_id}`)
+    .then((res) => {
+        return res.data
+    })
 }
