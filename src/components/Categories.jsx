@@ -16,8 +16,8 @@ const Categories = () => {
         return <p>Loading...</p>
     } else {
     return (allCategories.map((category) => {
-        
-            return <SingleCategory category_slug={category.slug}></SingleCategory>
+        console.log(category)
+            return <SingleCategory category={category}></SingleCategory>
         })
     )
 }
