@@ -8,7 +8,7 @@ export const SingleCategory = ({category}) => {
   let string = category.slug
   string = string.replace(/-/g, ' ');
 
-  
+  let formattedString = <p className="individual-category">{string}</p>
 
 useEffect(() => {
   setCategory(category.slug)
@@ -16,7 +16,7 @@ useEffect(() => {
 
   return (
     <div className='category-link'>
-    <Link to={`/reviews/${singleCategory}`}>{string}</Link>
+    <Link to={`/reviews/${singleCategory}`}>{formattedString}</Link>
     <p>{category.description}</p>
     </div>
   );
