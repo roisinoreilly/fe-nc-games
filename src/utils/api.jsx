@@ -40,3 +40,13 @@ export const getComments = (review_id) => {
         return res.data.comments
     })
 }
+
+export const postComment = (review_id, username, body) => {
+    return api.post(`api/reviews/${review_id}/comments`, {username, body})
+    .then((res) => {
+        return res.data.comment
+    })
+    .catch((error) => {
+        console.log(error)
+    })
+}

@@ -4,6 +4,7 @@ import { getReviewByID } from "../utils/api";
 import moment from "moment";
 import { Votes } from "./Votes";
 import { CommentsButton } from "./CommentsButton";
+import { PostComment } from "./PostComment";
 
 export const SingleReview = () => {
   const [review, setReview] = useState([]);
@@ -43,6 +44,7 @@ export const SingleReview = () => {
           </p>
           <Votes review={review} />
           <CommentsButton review={review} />
+          <PostComment review_id={review.review_id}/>
         </div>
       </>
     );
