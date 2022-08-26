@@ -1,16 +1,19 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
-export const SingleCategory = ({category_slug}) => {
+export const SingleCategory = ({category}) => {
 
-  const [category, setCategory] = useState([])
+  const [singleCategory, setCategory] = useState([])
+  let string = category.slug
+  string = string.replace(/-/g, ' ');
 
 useEffect(() => {
-  setCategory(category_slug)
-}, [category_slug])
+  setCategory(category.slug)
+}, [category.slug])
   return (
     <div className='category-link'>
-    <Link to={`/reviews/${category}`}>{category}</Link>
+    <Link to={`/reviews/${singleCategory}`}>{string}</Link>
+    <p>{category.description}</p>
     </div>
   );
 };
