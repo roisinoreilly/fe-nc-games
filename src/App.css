@@ -53,10 +53,12 @@
 
 .snippet {
   display: -webkit-box;
-  max-width: 200px;
+  max-width: 250px;
   -webkit-line-clamp: 4;
   -webkit-box-orient: vertical;
   overflow: hidden;
+  margin-right: 0;
+  text-align: left;
 }
 
 .card {
@@ -80,10 +82,14 @@
 }
 
 .add-comment-label {
-  margin-top: 40px;
+  margin-top: 5px;
   margin-bottom: 5px;
 }
 
 .submit-button {
   margin-bottom: 40px;
+}
+
+.posted-message {
+  margin-top: 20px;
 }
