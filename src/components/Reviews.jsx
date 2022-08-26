@@ -2,12 +2,14 @@ import { getAllReviews } from "../utils/api";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { AllReviews } from "./AllReviews";
+import { Error } from "./Error";
 
 export const Reviews = () => {
   const [allReviews, setAllReviews] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [sortBy, setSortBy] = useState()
   const [orderBy, setOrderBy] = useState("desc")
+  const [err, setErr] = useState(false)
 
   let { category_slug } = useParams();
 
@@ -15,6 +17,11 @@ export const Reviews = () => {
     getAllReviews(category_slug).then((allReviews) => {
       setAllReviews(allReviews);
       setIsLoading(false);
+      setErr(false)
+    })
+    .catch((err) => {
+      setIsLoading(false)
+      setErr(true)
     });
   }, [category_slug]);
 
@@ -28,7 +35,10 @@ export const Reviews = () => {
 
   if (isLoading) {
     return <p className="loading">Loading...</p>;
-  } else {
+  }
+    if (err) {
+      return <Error></Error>
+     } else {
     return (
       <>
         <form id='sort-reviews' onSubmit={handleSubmit}>

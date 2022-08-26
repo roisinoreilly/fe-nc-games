@@ -5,10 +5,12 @@ import moment from "moment";
 import { Votes } from "./Votes";
 import { CommentsButton } from "./CommentsButton";
 import { PostComment } from "./PostComment";
+import { Error } from "./Error";
 
 export const SingleReview = () => {
   const [review, setReview] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [err, setErr] = useState(false)
 
   const { review_id } = useParams();
 
@@ -16,12 +18,21 @@ export const SingleReview = () => {
     getReviewByID(review_id).then((singleReview) => {
       setReview(singleReview);
       setIsLoading(false);
+      setErr(false)
+    })
+    .catch((err) => {
+      setIsLoading(false)
+      setErr(true)
     });
   }, [review_id]);
 
   if (isLoading) {
     return <p>Loading...</p>;
-  } else {
+  } 
+  if (err) {
+    return <Error></Error>
+  }
+  else {
     const formatDate = moment(review.created_at).format("LLLL");
     return (
       <>

@@ -5,6 +5,7 @@ import Categories from "./components/Categories"
 import Nav from './components/Nav';
 import { Reviews } from './components/Reviews';
 import { SingleReview } from './components/SingleReview';
+import { Error } from './components/Error';
 
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
         <Route path="/reviews" element={<Reviews />} />
         <Route path="/reviews/:category_slug" element={<Reviews />} />
         <Route path="/review/:review_id" element={<SingleReview />} />
+        <Route path="*" element={<Error />} />
         </Routes>
     </div>
           </BrowserRouter>
