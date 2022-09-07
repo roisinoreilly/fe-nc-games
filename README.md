@@ -1,8 +1,10 @@
-# Getting Started with Create React App
+#NC Games React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Background
 
-## Available Scripts
+This project was built as part of my frontend final project at Northcoders using my backend API. This app views a list of game reviews in the database, can view reviews filtered by game category, and can sort and order reviews. A user can also post and delete comments on reviews, and up and downvote.
+
+## Installation
 
 In the project directory, you can run:
 
