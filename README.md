@@ -1,4 +1,4 @@
-#NC Games React App
+# NC Games React App
 
 ## Background
 
