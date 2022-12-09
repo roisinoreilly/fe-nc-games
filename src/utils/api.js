@@ -1,7 +1,7 @@
 const axios = require("axios")
 
 const api = axios.create({
-    baseURL: "https://roisin-oreilly-nc-games.herokuapp.com/"
+    baseURL: "https://roisin-oreilly-nc-games.cyclic.app/"
 })
 
 export const getAllReviews = (category_slug, sortBy, orderBy) => {
